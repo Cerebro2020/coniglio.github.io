@@ -816,7 +816,7 @@ export default function(choose,quadri){
   })
 
   const gElemento1 = new THREE.BoxGeometry( 10, 10, 10 );
-  const elemento1 = new THREE.Mesh(gElemento1, material2);
+  const elemento1 = new THREE.Mesh(gElemento1, material);
   scene.add(elemento1); 
   elemento1.position.set( 190,80, 0 ); 
   elemento1.scale.set( 5, 5, 5);
