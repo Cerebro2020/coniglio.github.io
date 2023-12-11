@@ -223,8 +223,7 @@ vTexture2.format = THREE.RGBAFormat;
   // RESEARCHES ////
   const gSproject = new THREE.SphereGeometry( 10, 40, 40 ); 
     
-  const mSproject = new THREE.MeshNormalMaterial({
-    color: 0x0055ff,
+  const mSproject = new THREE.MeshNormalMaterial({    
     side: THREE.DoubleSide,
     //map: textureP2,      
   });
