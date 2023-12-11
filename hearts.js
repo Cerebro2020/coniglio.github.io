@@ -753,9 +753,9 @@ export default function(choose,quadri){
 
     retC.add(centro, emotionC1, emotionC2, emotionC3);             
     centro.add(retC);  
-    retC.position.set( 0, 180, -210 );   
+    retC.position.set( 0, 180, -170 );   
     retC.rotation.set( Math.PI/2, k/3.2, 0 );    
-    retC.scale.set( 2.5, 2.5, 2.5 );
+    retC.scale.set( 1.2, 1.2, 1.2 );
     
     scene.add(retC);
 
@@ -859,7 +859,7 @@ export default function(choose,quadri){
   elemento6.receiveShadow = true;
 
   const gPalla1 = new THREE.SphereGeometry( 10, 64, 64 );
-  const palla1 = new THREE.Mesh(gPalla1, material2 )
+  const palla1 = new THREE.Mesh(gPalla1, mPavimento )
   palla1.position.set( -70, 10, -50 )
   palla1.castShadow = true;
   palla1.receiveShadow = true;
@@ -871,7 +871,7 @@ export default function(choose,quadri){
   scene.add(palla2);
 
   
-  const palla3 = new THREE.Mesh(gPalla1, material2);
+  const palla3 = new THREE.Mesh(gPalla1, mPavimento);
   /*palla1.clone();/* CENTRALE PARETE */
   
   palla3.position.set( 0, 180, -210 );
