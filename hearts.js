@@ -97,43 +97,37 @@ export default function(choose,quadri){
 
   //TEXTURES
   const gLoader = new THREE.TextureLoader();
-  const gardenTexture = gLoader.load('images/textures/hearts/quadretti.jpg');
-  TextureQuadretti.wrapS = THREE.RepeatWrapping;
-  TextureQuadretti.wrapT = THREE.RepeatWrapping;
-  TextureQuadretti.repeat.set(1, 1); 
+  const gardenTexture = gLoader.load('images/textures/hearts/quadretti2.jpg');
+  gardenTexture.wrapS = THREE.RepeatWrapping;
+  gardenTexture.wrapT = THREE.RepeatWrapping;
+  gardenTexture.repeat.set(1, 1); 
 
   const g2Loader = new THREE.TextureLoader();
-  const TextureQuadretti2 = gLoader.load('images/textures/hearts/quadretti_2.jpg');
-  TextureQuadretti2.wrapS = THREE.RepeatWrapping;
-  TextureQuadretti2.wrapT = THREE.RepeatWrapping;
-  TextureQuadretti2.repeat.set(1, 1);
+  const gardenTexture2 = gLoader.load('images/textures/hearts/quadretti_q.jpg');
+  gardenTexture2.wrapS = THREE.RepeatWrapping;
+  gardenTexture2.wrapT = THREE.RepeatWrapping;
+  gardenTexture2.repeat.set(1, 1);
 
   const g3Loader = new THREE.TextureLoader();
-  const TextureVerdi = g3Loader.load('images/textures/hearts/quadretti_verdi.jpg');
-  TextureVerdi.wrapS = THREE.RepeatWrapping;
-  TextureVerdi.wrapT = THREE.RepeatWrapping;
-  TextureVerdi.repeat.set(1,1);
+  const gardenTexture3 = g3Loader.load('images/textures/hearts/quadretti3.jpg');
+  gardenTexture3.wrapS = THREE.RepeatWrapping;
+  gardenTexture3.wrapT = THREE.RepeatWrapping;
+  gardenTexture3.repeat.set(1,1);
 
 
   const g4Loader = new THREE.TextureLoader();
-  const TextureAzzurri = g4Loader.load('images/textures/hearts/quadretti_azzurri.jpg');
-  TextureAzzurri.wrapS = THREE.RepeatWrapping;
-  TextureAzzurri.wrapT = THREE.RepeatWrapping;
-  TextureAzzurri.repeat.set(1,1);
-
-  const g5Loader = new THREE.TextureLoader();
-  const TextureDisegnino = g4Loader.load('images/textures/hearts/disegnino.jpg');
-  TextureDisegnino.wrapS = THREE.RepeatWrapping;
-  TextureDisegnino.wrapT = THREE.RepeatWrapping;
-  TextureDisegnino.repeat.set(1,1);
+  const gardenTexture4 = g4Loader.load('images/textures/hearts/quadretti4.jpg');
+  gardenTexture4.wrapS = THREE.RepeatWrapping;
+  gardenTexture4.wrapT = THREE.RepeatWrapping;
+  gardenTexture3.repeat.set(1,1);
 
   // UV MAP //
 
   const uvLoader = new THREE.TextureLoader();
   const uvPaper = uvLoader.load('images/uvmap/paper.jpg');
-  uvPaper.wrapS = THREE.RepeatWrapping;
-  uvPaper.wrapT = THREE.RepeatWrapping;
-  uvPaper.repeat.set(1, 1); 
+  gardenTexture.wrapS = THREE.RepeatWrapping;
+  gardenTexture.wrapT = THREE.RepeatWrapping;
+  gardenTexture.repeat.set(1, 1); 
 
   // VIDEO
   var video = document.createElement('video');
@@ -153,7 +147,7 @@ export default function(choose,quadri){
   // ROOM ////
   const gPavimento = new THREE.BoxGeometry(300,1,300);
   const mPavimento = new THREE.MeshPhysicalMaterial({
-    map: TextureVerdi,
+    map: gardenTexture3,
     bumpMap: uvPaper,
     bumpScale: 0.1,
 
@@ -163,7 +157,7 @@ export default function(choose,quadri){
 
 
   const material2 = new THREE.MeshPhysicalMaterial({
-    map: TextureAzzurri,
+    map: gardenTexture,
     bumpMap: uvPaper,
     bumpScale: 0.1,
 
@@ -172,7 +166,7 @@ export default function(choose,quadri){
 
 
   const mPareteS = new THREE.MeshPhysicalMaterial({
-    map: TextureAzzurri,
+    map: gardenTexture4,
     bumpMap: uvPaper,
     bumpScale: 0.1,
   })
@@ -213,7 +207,7 @@ export default function(choose,quadri){
       tree.traverse(function (node) {
         if (node.isMesh) {
           const material = new THREE.MeshPhysicalMaterial({
-            map: texture,
+            map: gardenTexture2,
             bumpMap: uvPaper,
             bumpScale: 0.1,            
           });
@@ -759,9 +753,9 @@ export default function(choose,quadri){
 
     retC.add(centro, emotionC1, emotionC2, emotionC3);             
     centro.add(retC);  
-    retC.position.set( 0, 180, -170 );   
+    retC.position.set( 0, 180, -210 );   
     retC.rotation.set( Math.PI/2, k/3.2, 0 );    
-    retC.scale.set( 1.2, 1.2, 1.2 );
+    retC.scale.set( 2.5, 2.5, 2.5 );
     
     scene.add(retC);
 
@@ -865,7 +859,7 @@ export default function(choose,quadri){
   elemento6.receiveShadow = true;
 
   const gPalla1 = new THREE.SphereGeometry( 10, 64, 64 );
-  const palla1 = new THREE.Mesh(gPalla1, mPavimento )
+  const palla1 = new THREE.Mesh(gPalla1, material2 )
   palla1.position.set( -70, 10, -50 )
   palla1.castShadow = true;
   palla1.receiveShadow = true;
@@ -877,7 +871,7 @@ export default function(choose,quadri){
   scene.add(palla2);
 
   
-  const palla3 = new THREE.Mesh(gPalla1, mPavimento);
+  const palla3 = new THREE.Mesh(gPalla1, material2);
   /*palla1.clone();/* CENTRALE PARETE */
   
   palla3.position.set( 0, 180, -210 );
