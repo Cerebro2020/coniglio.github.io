@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEREBRO | PROJECTS | WRITINGS | GHOST TRACK</title>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="writing.css">  
+
+    <style>
+
+        .canvas {
+            z-index: -1;             
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            cursor: grab;
+        }
+
+canvas:active {				
+  cursor: grabbing;
+}
+
+    </style>
+</head>
+<body>    
+    
+    <script type="importmap">
+            {
+                "imports": {
+                    "three": "./three_class/three.module.js"
+                    }
+            }
+    </script>		
+    
+    <script type = "module">
+        import scene from "./writing_ghosttrack.js";
+        scene();
+    </script> 
+    
+    <header>
+        <div id="logo">
+            <a href="index.html"><img src="images/loghi/coniglio_verde_logo.png" alt="logo coniglio verde"></a>
+        </div>
+
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+        </label class='menu-button-container' for="menu-toggle">
+
+        <ul class="menu">                             
+            <li></li>            
+            <li><a href="index.html#projects">PROJECTS</a></li>
+            <li><a href="writing.html#">WRITING</a></li>                       
+        </ul>
+    </header>
+
+    <link rel="shortcut icon" href="#">
+    
+    <video id="ghost" src="/video/writing/01_traccia_fantasma.mp4" autoplay loop style="display: none;"></video>  
+
+    <div class="info_leyer">
+        <div id="info">
+            <p>
+                MOUSE WHEEL zoom<br>left click grab
+            </p>
+        </div>
+    </div>
+
+    <footer id="footer">                            
+        <ul>
+            <li>&copy; 2023 felice vino</li>
+            <li><a href="instagram.com">instagram</a></li>
+            <li><a href="facebook.com">meta</a></li>
+            <li><a href="vimeo.com">vimeo</a></li>                
+        </ul>
+    </footer>
+    
+</body>
+</html>

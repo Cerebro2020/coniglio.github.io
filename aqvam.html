@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEREBRO | PROJECTS | STATIC | AQVAM</title>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="writing.css">
+    <style>
+        .canvas {
+            z-index: -1;
+        }
+    </style>   
+    
+<body>   
+    
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "./three_class/three.module.js"
+                    }
+            }
+        </script>		
+    
+        <script type = "module">                    
+                    import scene from "./aqvam_3.js";
+                    scene();
+        </script>  
+    
+    <header>
+        <div id="logo">
+            <a href="index.html"><img src="images/loghi/coniglio_verde_logo.png" alt="logo coniglio verde"></a>
+        </div>
+
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+        </label class='menu-button-container' for="menu-toggle">
+
+        <ul class="menu">                             
+            <li></li>            
+            <li><a href="index.html#projects">PROJECTS</a></li>
+            <li><a href="writing.html#">WRITING</a></li>                       
+        </ul>
+    </header>
+
+    <div class="button_camera">
+        <div class="leyer_button">        
+            <div class="button_div">
+                <button class=button onclick="resetCamera()" style="background-color: rgba(0,0,0,0.3);">
+                    Reset Camera
+                </button>
+            </div>
+        </div> 
+    </div>
+
+    <footer id="footer">                           
+        <ul>
+            <li><p>&copy; 2023 felice vino</p></li>            
+        </ul>
+        
+    </footer>
+
+        
+</body>
+
+</html>

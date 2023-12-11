@@ -1,0 +1,130 @@
+*{
+    background-color: black;    
+}
+
+section {    
+    width: 100%;
+    height: 100vh;
+    /*background-color: #A2FF00;*/    
+}
+
+.story-container {                
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    height: 70vh;     
+}
+
+.column-story {     
+    width: 40%;   
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-story {             
+    height: 20%;    
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 40px;    
+    font-style: italic; 
+    display: flex;  
+    justify-content: flex-start;
+}
+
+.title-story H2 {    
+    color: #A2FF00;
+    text-align: left;
+    align-self: flex-start; 
+    line-height: 40px; 
+}
+
+.text-story {         
+    height: 70%; 
+    display: flex;    
+    justify-content: flex-end;    
+}
+
+.text-story p {      
+    width: 100%;        
+    align-self: flex-end;
+    font-size: 20px;    
+    line-height: 22px;       
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+
+    .story-container {
+        
+        flex-direction: column;
+        width: 90%;  
+        font-size: 3px;      
+    }
+
+    .column-story {
+        width: 90%;
+        
+    }
+
+    .title-story { 
+        
+        height: 18%;           
+        width: 90%;
+        font-size: 18px;          
+    }
+
+    .text-story {   
+        width: 100%;
+        height: 70%;
+        
+    } 
+
+    .text-story p {
+        font-size: 16px;
+        width: 100%; 
+    }
+
+    
+
+   .column-story img {
+    max-width: 30%;
+    max-height: 60%;
+   }
+    
+     
+
+}
+
+@media (max-width: 724px) {
+
+    .story-container {
+        width: 90%;
+        height: 80vh;
+    }
+
+    .title-story {
+        font-size: 14px;            
+    }
+
+    .text-story p{   
+        font-size: 18px;                
+    } 
+    
+    .image-story {    
+        width: 100%;
+        margin-bottom: 0px;            
+    }
+    
+    .image-story img {
+        max-width: 58px;            
+    }    
+}
+
+
+

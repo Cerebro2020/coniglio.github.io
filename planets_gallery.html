@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>coniglioverde|static</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="static.css">  
+
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html"><img src="images/logo2.png" ></a>
+            <div id="menu">            
+                <ul id="menu"> 
+                    <li></li>
+                            
+                </ul>          
+            </div>              
+        </header>
+        <canvas id="writingBack">            			
+            <script type="importmap">
+                {
+                    "imports": {
+                        "three": "./three_class/three.module.js"
+                        }
+                }
+            </script>		
+            <script type = "module">
+                        import scene from "./planets_gallery.js";                    
+                            scene();
+            </script>            
+        </canvas>
+
+        <footer id="footer">                            
+            <ul>
+                <li><p>&copy; 2023 felice e vino</p></li>        
+            </ul>
+        </footer>
+    </body>
+</html>

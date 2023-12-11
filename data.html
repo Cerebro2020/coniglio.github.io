@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>coniglioverde|data</title>
+
+        <link rel="stylesheet" href="style.css">   
+        <!--<link rel="stylesheet" href="data.css">-->     
+
+    </head>
+
+    <body>
+        <canvas class="writing">            			
+            <script type="importmap">
+                {
+                    "imports": {
+                        "three": "./three_class/three.module.js"
+                        }
+                }
+                </script>		
+                <script type = "module">
+                        import scene from "./data.js";
+                        //import scene from "./aqvam.js";
+                        scene();
+                </script>            
+        </canvas>
+
+        <header>
+            <div id="logo">
+                <a href="index.html"><img src="images/loghi/coniglio_verde_logo.png" alt=""></a>
+            </div>
+
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+        </label class='menu-button-container' for="menu-toggle">
+
+            <ul class="menu">                
+                <li><a href="index.html#projects">PROJECTS</a></li> 
+                <!--<li><a href="#">H.E.ArtS</a></a></li>
+                <li><a href="#aqvam">AQVAM</a></a></li>-->
+            </ul>
+        </header>      
+
+        <!-- FOOTER -->
+        <footer id="footer">                            
+            <ul>
+                <li>&copy; 2023 felice vino</li>
+                <li><a href="instagram.com">instagram</a></li>
+                <li><a href="facebook.com">meta</a></li>
+                <li><a href="vimeo.com">vimeo</a></li>                
+            </ul>
+        </footer>
+
+        <section>
+           
+            <div class="home-text">
+
+                <div class="home-title">
+                    <h1 >H.E.Arts</h1>
+                </div>                 
+                
+                <div class="home-paragraph">
+                                 
+                    <p>
+                        Tell what you feel, watch the paintings and let you feel..<br>
+                        Pay attention to your feelings more than what the paint coul means.<br>
+                        Choose one, ore two but no more than three choise.
+                        Push the paint one after one.
+                        At the and you will discover what it means.<br>
+                        <a href="hearts.html">Try this experience</a>.
+                    </p>
+
+                </div>
+
+            </div> 
+            
+        </section>            
+
+        <!--<section id="aqvam">
+
+            <div class="home-text">
+
+                <div class="home-title">
+                
+                    <h1 >AQVAM</h1>
+                </div>  
+            
+
+                <div class="home-paragraph">     
+                    <p class="sectionP">Science is a mistery, a sacred place made of number and ituitions.<br>
+                        Try our <a href="aqvam.html" style="font-family:Rokkitt, italic; font-style: italic; font-weight: 400;">experience</a>.
+                    </p>
+                </div>
+            </div>
+
+        </section>-->
+    </body>
+</html>

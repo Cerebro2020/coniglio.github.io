@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CEREBRO | PROJECTS | WRITINGS | </title>
+        <link rel="stylesheet" href="style.css">  
+        <link rel="stylesheet" href="writing.css">
+    </head> 
+        
+    <body>     
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "./three_class/three.module.js"
+                }
+            }
+        </script>		
+        
+        <script type = "module">
+            import scene from "./writing_neutropoli.js";          
+            scene();
+        </script>  
+        
+        <header>
+            <div id="logo">
+                <a href="index.html"><img src="images/loghi/coniglio_verde_logo.png" alt="logo coniglio verde"></a>
+            </div>
+
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+            </label class='menu-button-container' for="menu-toggle">
+
+            <ul class="menu">                             
+                <li></li>            
+                <li><a href="index.html#projects">PROJECTS</a></li>
+                <li><a href="writing.html#">WRITING</a></li>                       
+            </ul>
+        </header> 
+
+        <div class="info_leyer">
+            <div id="info">
+                <p>
+                    POINTER directon<br>WSDA constols
+                </p>
+            </div>
+        </div>
+
+        <div id="button" class="button_camera">
+            <div class="leyer_button">        
+                <div class="button_div">
+                    <button class=button onclick="resetCamera()">
+                        Reset Camera
+                    </button>
+                </div>
+            </div> 
+        </div>
+
+        <footer id="footer">                                   
+            <ul>
+                <li>&copy; 2023 felice vino</li>
+                <li><a href="instagram.com">instagram</a></li>
+                <li><a href="facebook.com">meta</a></li>
+                <li><a href="vimeo.com">vimeo</a></li>                
+            </ul>            
+        </footer>        
+    </body>
+
+</html>

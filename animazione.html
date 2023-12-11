@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Animazione Cubo con Three.js</title>
+        <style>
+            body { margin: 0; }
+            canvas { display: block; }
+        </style>
+
+    </head>
+
+    <body>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "./three_class/three.module.js"
+                    }
+            }
+        </script>	
+
+        <script type="module">
+            // IMPORT
+            import * as THREE from 'three';
+            import {FirstPersonControls} from './three_class/FirstPersonControls.js'
+            import {OrbitControls} from './three_class/OrbitControls.js';
+            import { VRButton } from './three_class/VRButton.js';
+            import { DragControls } from './three_class/DragControls.js';
+            import { MapControls } from './three_class/MapControls.js';
+            
+            // TEXTURES //
+            const spaceTexture = new THREE.TextureLoader().load('images/equirectangulars/space.jpg' ); 
+
+            // CLOCK            
+            const clock = new THREE.Clock();  
+
+            // SCENE
+            var scene = new THREE.Scene();
+
+            // CAMERA
+            var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000);            
+
+            // RENDERER
+            var renderer = new THREE.WebGLRenderer();            
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap; 
+            // PLAYER
+            let player = { height:1.8, speed:0.2, turnSpeed:Math.PI*0.02 };
+
+            // RENDERER SET SIZE
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // RESIZE WINDOW
+            window.addEventListener('resize', function(){
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                renderer.setSize( width, height );
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            } );
+
+            // SCENE BACKGROUND
+            scene.background = new THREE.Color( 0x000000 ); 
+            
+            // LIGHTS
+            const ambiente = new THREE.AmbientLight ( 0xffffff, 0.5 );
+            
+
+            // PUNTO
+            const punto = new THREE.PointLight ( 0xffffff, 1, 240);
+            const pHelper = new THREE.PointLightHelper(punto);
+            punto.position.set( 0, 100, 0);
+            punto.castShadow = true;   
+            punto.shadow.mapSize.width = 1024; // default
+            punto.shadow.mapSize.height = 1024; // default
+            punto.shadow.camera.near = 0.5; // default
+            punto.shadow.camera.far = 1024; // default
+            
+            const punto2 = punto.clone();
+            const pHelper2 = new THREE.PointLightHelper(punto2);
+            punto2.position.set( 0, 0, 0); 
+
+            const punto3 = punto.clone();
+            punto3.position.set(-50, 50, 0); 
+            const pHelper3 = new THREE.PointLightHelper(punto3);
+
+            //scene.add( pHelper, pHelper2, pHelper3);
+
+            scene.add( ambiente, punto, punto2, punto3);
+
+            // CAMERA POSITION
+            camera.position.set( 0, 0, 300);
+            camera.lookAt( 0, 0, 0); 
+            camera.setFocalLength ( 35 );            
+
+            // ORBIT CONTROLS
+            /*const controls = new OrbitControls( camera, renderer.domElement );  
+            controls.listenToKeyEvents( window ); 
+            controls.minDistance = 40;
+            controls.maxDistance = 300; 
+            controls.maxPolarAngle = 1.5;*/ 
+            
+            const controls = new MapControls( camera, renderer.domElement );
+            controls.enableDamping = true;
+            controls.minDistance = 40;
+            controls.maxDistance = 500;
+            controls.maxPolarAngle = 1.5;
+
+            
+            // ROOM             
+            const gSchermo = new THREE.BoxGeometry( 200, 1, 400 ); 
+            const mSchermo = new THREE.MeshPhysicalMaterial( {
+                color: 0xaaaaaa,
+                roughness: 0,
+                metalness: 0,                
+            } ); 
+            const schermo = new THREE.Mesh( gSchermo, mSchermo ); 
+            schermo.position.set( 0, -11, 0 );
+            schermo.receiveShadow = true;
+
+            const schermo2 = schermo.clone();
+            schermo2.position.set( -100, 89, 0 );
+            schermo2.rotation.set( Math.PI/2, 0, Math.PI/2 );
+            schermo2.receiveShadow = true;
+
+            const schermo3 = schermo.clone();
+            schermo3.position.set( 0, 89, -100 );
+            schermo3.rotation.set( Math.PI/2, 0, 0 );
+            schermo3.receiveShadow = true;
+
+            const room = new THREE.Group();
+            room.add( schermo, schermo2, schermo3 );
+            room.scale.set( 3, 1, 3 );
+            room.rotation.set( 0, Math.PI/-3.6, 0 );
+            room.onMouseClick = false;
+            scene.add(room);
+            
+           // Creare il materiale per le particelle
+            const particleMaterial = new THREE.PointsMaterial({
+                size: 5,
+                transparent: true,
+                opacity: 0.5,
+                color: 0xffffff
+            });
+
+            // Creare la geometria per le particelle
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 4000; // Numero di particelle
+
+            // Creare un array per memorizzare le posizioni delle particelle
+            const positions = new Float32Array(particlesCount * 3); // 3 coordinate per particella
+
+            for (let i = 0; i < particlesCount; i++) {
+                const phi = Math.random() * 2 * Math.PI; // angolo casuale
+                const theta = Math.acos((2 * Math.random()) - 1); // angolo casuale
+                const radius = 1000; // raggio della sfera
+
+                // Calcolare le coordinate cartesiane delle particelle
+                positions[i * 3] = radius * Math.sin(theta) * Math.cos(phi); // x
+                positions[i * 3 + 1] = radius * Math.sin(theta) * Math.sin(phi); // y
+                positions[i * 3 + 2] = radius * Math.cos(theta); // z
+            }
+
+            // Impostare l'attributo 'position' della geometria con l'array delle posizioni
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            // Creare la mesh di particelle
+            const particlesMesh = new THREE.Points(particlesGeometry, particleMaterial);
+
+            // Aggiungere la mesh di particelle alla scena
+            scene.add(particlesMesh);
+
+            
+            let particlesMesh2, particlesMesh3;
+            particlesMesh2 = particlesMesh.clone();
+            particlesMesh3 = particlesMesh.clone();
+
+            particlesMesh2.scale.set(0.8, 0.8, 0.8);
+            particlesMesh3.scale.set( 1.2, 1.2, 1.2);
+            
+            particlesMesh2.rotation.set(1, 1, 0);
+            particlesMesh2.rotation.set(0, 0, 0.8);
+
+
+            scene.add(particlesMesh2, particlesMesh3);
+
+            // SPHERE            
+            var geometry = new THREE.SphereGeometry(10, 64, 64);
+            //const geometry = new THREE.TorusKnotGeometry( 5.7, 2, 100, 10 ); 
+            var material = new THREE.MeshPhysicalMaterial({
+                color: 0x000000,
+                roughness: 0,
+                metalness: 0,
+                reflectivity: 1,
+            });            
+
+            var object = new THREE.Mesh(geometry, material);
+            object.castShadow = true;
+            object.receiveShadow = true;
+
+            scene.add(object);
+
+            const object2 = object.clone();
+            object2.position.set( 10, 0, 10 );
+            object2.receiveShadow = true;
+            scene.add(object2);
+            
+            var startPos = new THREE.Vector3(0, 30, 0);
+            var midPos = new THREE.Vector3(0, 50, 0); 
+            var endPos = new THREE.Vector3(0, 30, 0);
+            var moveStartTime = Date.now();
+
+            var currentPos = startPos;
+            var nextPos = midPos;
+
+            var animate = function () {
+                requestAnimationFrame(animate);
+
+                var now = Date.now();
+                var duration = 1000; 
+                var elapsed = (now - moveStartTime) / duration; 
+
+                if (elapsed > 1) {
+                    moveStartTime = now; 
+                    elapsed =  0;                    
+                    if (currentPos === startPos && nextPos === midPos) {
+                        currentPos = midPos;
+                        nextPos = endPos;
+                    } else if (currentPos === midPos && nextPos === endPos) {
+                        currentPos = endPos;
+                        nextPos = startPos;
+                    } else {
+                        currentPos = startPos;
+                        nextPos = midPos;
+                    }
+                }
+
+                object.position.copy(currentPos);
+                object.position.lerp(nextPos, elapsed);
+                renderer.render(scene, camera);
+                controls.update();
+	
+            };            
+       
+            animate();   
+                
+
+        </script>
+        
+    </body>
+
+</html>
