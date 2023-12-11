@@ -904,7 +904,7 @@ group.add(ret, tree);
 
 // ... aggiungi tutte le mesh che vuoi esportare
 
-// Crea un nuovo esportatore OBJ e esporta il grupppo
+// Crea un nuovo esportatore OBJ e esporta il gruppo
 var exporter = new THREE.OBJExporter();
 var result = exporter.parse(group);
 
