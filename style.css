@@ -336,7 +336,7 @@ canvas {
   font-weight: 600;    
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
   section {
     min-height: 100svh;
   }
