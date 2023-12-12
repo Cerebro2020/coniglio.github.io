@@ -97,7 +97,7 @@ section {
 
 }
 
-@media (max-width: 724px) {
+@media (max-width: 700px) {
 
     .story-container {
         width: 90%;
@@ -109,7 +109,7 @@ section {
     }
 
     .text-story p{   
-        font-size: 18px;                
+        font-size: 12px;                
     } 
     
     .image-story {    
