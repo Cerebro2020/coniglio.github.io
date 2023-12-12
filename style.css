@@ -280,7 +280,7 @@ section {
 }
 
 canvas { 
-  /*box-sizing: border-box;     */
+  box-sizing: border-box;     
   position:fixed;
   width: auto; 
   height: auto;   
@@ -533,7 +533,7 @@ h2.projectsT {
  
 }
 
-@media (max-width: 724px){
+@media (max-width: 700px){
 
   .projectsgrid {    
     flex-direction: column;    
@@ -542,7 +542,7 @@ h2.projectsT {
 
   .grid-container{    
     width: 70%;
-    height: 40vh;
+    min-height: 40svh;
     grid-template-columns: 18vh 18vh;
     grid-template-rows: 18vh 18vh;
     gap: 1vh;  
