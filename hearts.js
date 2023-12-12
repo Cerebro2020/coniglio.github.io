@@ -119,7 +119,13 @@ export default function(choose,quadri){
   const gardenTexture4 = g4Loader.load('images/textures/hearts/quadretti4.jpg');
   gardenTexture4.wrapS = THREE.RepeatWrapping;
   gardenTexture4.wrapT = THREE.RepeatWrapping;
-  gardenTexture3.repeat.set(1,1);
+  gardenTexture4.repeat.set(1,1);
+
+  const g5Loader = new THREE.TextureLoader();
+  const gardenTexture5 = g5Loader.load('images/textures/hearts/quadretti5.jpg');
+  gardenTexture5.wrapS = THREE.RepeatWrapping;
+  gardenTexture5.wrapT = THREE.RepeatWrapping;
+  gardenTexture5.repeat.set(1,1);
 
   // UV MAP //
 
@@ -264,7 +270,7 @@ export default function(choose,quadri){
       tree2.traverse(function (node) {
         if (node.isMesh) {
           const material = new THREE.MeshPhysicalMaterial({
-            map: gardenTexture2,
+            map: gardenTexture5,
             bumpMap: uvPaper,
             bumpScale: 0.1,             
           });
@@ -753,9 +759,9 @@ export default function(choose,quadri){
 
     retC.add(centro, emotionC1, emotionC2, emotionC3);             
     centro.add(retC);  
-    retC.position.set( 0, 180, -210 );   
+    retC.position.set( 0, 180, -175 );   
     retC.rotation.set( Math.PI/2, k/3.2, 0 );    
-    retC.scale.set( 2.5, 2.5, 2.5 );
+    retC.scale.set( 1.4, 1.4, 1.4 );
     
     scene.add(retC);
 
@@ -765,7 +771,7 @@ export default function(choose,quadri){
   const livelli=_.map(choose,(v,k)=>{ 
 
     //BOX //////
-    const gBox = new THREE.BoxGeometry( 10, 10, 4 );
+    const gBox = new THREE.BoxGeometry( 4, 4, 4 );
     const mBox = new THREE.MeshPhysicalMaterial({
       color: new THREE.Color(v[1]),
       transparent:true,
@@ -796,14 +802,15 @@ export default function(choose,quadri){
     // CLONE 1
     const leyers = leyerGroup.clone(true);
     //scene.add(leyers);
-    leyers.position.set( 0, -0.8, -(8.3*k) );
-    leyers.scale.set( 3, 1, 2.5);
+    leyers.position.set( 170, 98, -(9.3*k) );
+    leyers.rotation.set( 0, 1.6, 0 );
+    leyers.scale.set( 1, 1, 1);
 
      // CLONE 3 
      const leyerSky2 = leyerGroup.clone(true);
      //scene.add(leyerSky2);
      leyerSky2.position.set( 4*k, 4*k, -4*k );
-     leyerSky2.rotation.set( 0, 0,0, );
+     leyerSky2.rotation.set( 0, 0, 0 );
      leyerSky2.scale.set( 1, 1, 1 );
 
     // CLONE 4 
@@ -859,7 +866,7 @@ export default function(choose,quadri){
   elemento6.receiveShadow = true;
 
   const gPalla1 = new THREE.SphereGeometry( 10, 64, 64 );
-  const palla1 = new THREE.Mesh(gPalla1, material2 )
+  const palla1 = new THREE.Mesh(gPalla1, mPareteS )
   palla1.position.set( -70, 10, -50 )
   palla1.castShadow = true;
   palla1.receiveShadow = true;
@@ -871,7 +878,7 @@ export default function(choose,quadri){
   scene.add(palla2);
 
   
-  const palla3 = new THREE.Mesh(gPalla1, material2);
+  const palla3 = new THREE.Mesh(gPalla1, mPavimento);
   /*palla1.clone();/* CENTRALE PARETE */
   
   palla3.position.set( 0, 180, -210 );
@@ -893,6 +900,11 @@ export default function(choose,quadri){
   piramid2.rotation.set(Math.PI/2, Math.PI/4, 0);
   piramid2.castShadow = true;
   piramid2.receiveShadow = true;
+
+  const gDodeca = new THREE.DodecahedronGeometry(50,0);
+  const dodeca = new THREE.Mesh(gDodeca, material2);
+  dodeca.position.set( 190 , 180, 100 );
+  scene.add(dodeca);
 
 
   // EXPORT

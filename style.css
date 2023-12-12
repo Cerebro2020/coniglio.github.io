@@ -5,11 +5,10 @@
 *{
     margin: 0;
     padding: 0;
-    /*border: 1px solid white;*/
 }
 
 html{
-    scroll-behavior: smooth;    
+    scroll-behavior: smooth; 
 }
 
 body{  
@@ -140,7 +139,6 @@ a {
 #menu-toggle {
   display: none;
 }
-  
 
 .menu-button,
 .menu-button::before,
@@ -526,7 +524,8 @@ h2.projectsT {
 @media (max-width: 1024px){
   
   /* GRID DEI PULSANTI PROJECTS*/
-  .grid-container {   
+  .grid-container { 
+    border: 1px white;  
     width: 50%;
     height: 50vh;     
     margin-left: -10%;
@@ -535,7 +534,7 @@ h2.projectsT {
   /*GRID TEXT*/
   .projects-text {    
     width: 40%;
-    height: 430vh;   
+    height: 43vh;   
   }
  
 }
