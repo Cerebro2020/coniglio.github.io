@@ -54,14 +54,10 @@ section {
     line-height: 22px;       
 }
 
-
-
-
-
 @media (max-width: 1024px) {
 
     .story-container {
-        
+
         flex-direction: column;
         width: 90%;  
         font-size: 3px;      
@@ -125,6 +121,3 @@ section {
         max-width: 58px;            
     }    
 }
-
-
-
