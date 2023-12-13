@@ -54,10 +54,14 @@ section {
     line-height: 22px;       
 }
 
+
+
+
+
 @media (max-width: 1024px) {
 
     .story-container {
-
+        
         flex-direction: column;
         width: 90%;  
         font-size: 3px;      
@@ -97,7 +101,7 @@ section {
 
 }
 
-@media (max-width: 700px) {
+@media (max-width: 724px) {
 
     .story-container {
         width: 90%;
@@ -109,7 +113,7 @@ section {
     }
 
     .text-story p{   
-        font-size: 12px;                
+        font-size: 18px;                
     } 
     
     .image-story {    
@@ -121,3 +125,6 @@ section {
         max-width: 58px;            
     }    
 }
+
+
+

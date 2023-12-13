@@ -31,18 +31,18 @@ export default function(){
 
   // TEXTURS
   const loader = new THREE.TextureLoader();
-  const textureP = loader.load ('./images/bcg/Sfondo.jpg'); 
+  const textureP = loader.load ('images/bcg/Sfondo.jpg'); 
   textureP.wrapS = THREE.RepeatWrapping;
   textureP.WrapT = THREE.RepeatWrapping;
 
-  const textureP2 = loader.load ('./images/bcg/Sfondo2.jpg');
-  const textureP3 = loader.load ('./images/bcg/SfondoS.jpg');
-  const textureSpace = loader.load ('./images/equirectangulars/space.jpg');
+  const textureP2 = loader.load ('images/bcg/Sfondo2.jpg');
+  const textureP3 = loader.load ('images/bcg/SfondoS.jpg');
+  const textureSpace = loader.load ('images/equirectangulars/space.jpg');
 
 // VIDEO  
 // VIDEO 1
 var video1 = document.createElement('video');
-video1.src = "./video/cinematic/00_Lupin.mp4";
+video1.src = "/video/cinematic/00_Lupin.mp4";
 video1.style.display = 'none'; 
 video1.loop = true; 
 document.body.appendChild(video1);  
@@ -57,7 +57,7 @@ vTexture1.format = THREE.RGBAFormat;
 
 // VIDEO 2
 var video2 = document.createElement('video');
-video2.src = "./video/cinematic/butterfly_spot.mp4";
+video2.src = "/video/cinematic/butterfly_spot.mp4";
 video2.style.display = 'none'; 
 video2.loop = true; 
 document.body.appendChild(video2);  

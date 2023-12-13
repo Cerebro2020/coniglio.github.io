@@ -4,10 +4,10 @@
     <head>
         <meta charset="UTF-8">
         <title>coniglioverde</title>
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="style.css">
 
-        <video id="lupin"  src="./video/cinematic/00_Lupin.mp4" autoplay loop muted style="display: none;"></video>
-        <video id="butterfly"  src="./video/cinematic/butterfly_spot.mp4" autoplay loop muted style="display: none;"></video>       
+        <video id="lupin"  src="/video/cinematic/00_Lupin.mp4" autoplay loop muted style="display: none;"></video>
+        <video id="butterfly"  src="/video/cinematic/butterfly_spot.mp4" autoplay loop muted style="display: none;"></video>       
     </head>
 
     <body>
@@ -21,7 +21,7 @@
             </script>		
             
             <script type = "module">
-                        import scene from "./js/index.js";                    
+                        import scene from "./index.js";                    
                         scene();
             </script>           
            
@@ -31,7 +31,7 @@
         <!-- HOME -->
         <header>
             <div id="logo">
-                <a href="#"><img src="./images/loghi/coniglio_verde_logo.png" alt="logo coniglio verde"></a>
+                <a href="#"><img src="images/loghi/coniglio_verde_logo.png" alt="logo coniglio verde"></a>
             </div>
 
             <input id="menu-toggle" type="checkbox" />
@@ -44,7 +44,8 @@
 
             <ul class="menu">
                 <li><a href="#">CONIGLIO VERDE</a></li></li>                              
-                <li><a href="#projects">PROJECTS</a></li>                                    
+                <li><a href="#projects">PROJECTS</a></li>
+                <!--<li><a href="#researches">RESEARCHES</a></a></li>-->                     
                 <li><a href="#credits">CREDITS</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
@@ -60,11 +61,13 @@
             </ul>
         </footer>
         
+
         <section> 
 
             <div class="home-text">
 
-                <div class="home-title">                    
+                <div class="home-title">
+                    <!--<h1>CONIGLIO<br>VERDE</h1>-->
                     <h1>CONIGLIO VERDE</h1>
                 </div>  
 
@@ -75,7 +78,7 @@
                         Green Rabbit loves to live in them so he builds rooms with poems, assembles landscapes with data, assembles and reassembles visual vehicles.<br>
                         Green Rabbit hates wasting, be it people, things, time or ideas; because everything can be transformed.<br>
                         Green Rabbit lives in multiple burrows, is always searching, in continuous transition.<br>
-                        Here is <a href="./coniglio_verde_story.html">his story</a>; but the more you search here, the more you will find.               
+                        Here is <a href="coniglio_verde_story.html">his story</a>; but the more you search here, the more you will find.               
                     </p>
                     
                 </div>
@@ -86,7 +89,7 @@
 
         </section>         
                     
-        <!--PROJECTS -->
+        <!-- PROJECTS -->
         <section id="projects">
 
             <div class="projectsgrid">
@@ -119,7 +122,7 @@
                     <br>
                     <p class="projectsP">Data is the organic tissue of our digital bodies, the new language of premonitions, a partial and impartial extension of ourselves.<br> 
                     Coniglio Verde has built environments, objects and creatures for us.<br>
-                    <a href="./data.html">Get down this hole</a>.</p>
+                    <a href="data.html">Get down this hole</a>.</p>
 
                 </div>
 
@@ -128,7 +131,7 @@
                     <h2 class="projectsT">CINEMATIC</h2>
                     <br>
                     <p class="projectsP">Coniglio Verde, at times, sunk in the armchair of a movie theater, thought that there was not much difference between a dream and that vision. Only that wasn’t his dream, nor his vision, so from time to time, Coniglio Verte projects his own hallucinations.<br>
-                    <a href="./cinematic.html">Get down this hole</a>.</p>
+                    <a href="cinematic.html">Get down this hole</a>.</p>
 
                 </div>  
 
@@ -143,7 +146,7 @@
                     <h2 class="projectsT">STATIC</h2>
                     <br>
                     <p class="projectsP">Now, time is a surface, the images slide on it, the images have a body, but the body has form only in the light, and without the obra there is not even that. Light and shadow, here’s this.<br>
-                    <a href="./static.html">Get down this hole</a>.</p>
+                    <a href="static.html">Get down this hole</a>.</p>
                 </div>
 
             </div> 
@@ -195,25 +198,45 @@
             </script>    
 
         </section>
+
+        <!-- RESEARCHES -->       
+        <!--<section id="researches">
+
+            <div class="home-text">
+
+                <div class="home-title">
+                    <h1 >RESEARCHES</h1>
+                </div>  
+
+                <div class="home-paragraph">         
+                    <p>Green Rabbit saw the light in a lab, 
+                        Is an object of love of science and beauty.<br>
+                        Research is therefore inscribed in its DNA, which is the mystery of life, which is the mystery of knowledge.           
+                    </p>
+                </div>
+
+            </div>
+
+        </section>-->    
         
         <!-- WITH -->
         <section id="credits">
-            <h1 class="sectionT">WITH</h1>
+            <!--<h1 class="sectionT">WITH</h1>-->
             
             <div id="members">
                 
                 <div id="fotoCV">               
-                    <img src="./images/cv/CV_FVV.jpg" alt="Felice Vino" onclick="mostraCV('cvMembro1')"; makeActive(this);>
-                    <img src="./images/cv/CV_FV.jpg" alt="Fabio Volpi" onclick="mostraCV('cvMembro2')">
+                    <img src="images/cv/CV_FVV.jpg" alt="Felice Vino" onclick="mostraCV('cvMembro1')"; makeActive(this);>
+                    <img src="images/cv/CV_FV.jpg" alt="Fabio Volpi" onclick="mostraCV('cvMembro2')">
                     <img src="images/cv/CV_MC.jpg" alt="Marilina Ciaco" onclick="mostraCV('cvMembro3')">
-                    <img src="./images/cv/CV_GF.jpg" alt="Giorgio Funaro" onclick="mostraCV('cvMembro4')">
-                    <img src="./images/cv/CV_AB.jpg" alt="Antonia Bruno" onclick="mostraCV('cvMembro5')">
-                    <img src="./images/cv/CV_GA.jpg" alt="Giulia Agostinetti" onclick="mostraCV('cvMembro6')">
+                    <img src="images/cv/CV_GF.jpg" alt="Giorgio Funaro" onclick="mostraCV('cvMembro4')">
+                    <img src="images/cv/CV_AB.jpg" alt="Antonia Bruno" onclick="mostraCV('cvMembro5')">
+                    <img src="images/cv/CV_GA.jpg" alt="Giulia Agostinetti" onclick="mostraCV('cvMembro6')">
                     <img src="images/cv/CV_DdM.jpg" alt="Davide Del Monte" onclick="mostraCV('cvMembro7')">
-                    <img src="./images/cv/CV_MR.jpg" alt="Martin Romeo" onclick="mostraCV('cvMembro8')">
-                    <img src="./images/cv/CV_MB.jpg" alt="Maria Borio" onclick="mostraCV('cvMembro9')">  
-                    <img src="./images/cv/CV_CR.jpg" alt="Collettivo Cerebro" onclick="mostraCV('cvMembro10')">
-                    <img src="./images/cv/CV_CB.jpg" alt="Collettivo Cerebro" onclick="mostraCV('cvMembro11')">                                                   
+                    <img src="images/cv/CV_MR.jpg" alt="Martin Romeo" onclick="mostraCV('cvMembro8')">
+                    <img src="images/cv/CV_MB.jpg" alt="Maria Borio" onclick="mostraCV('cvMembro9')">  
+                    <img src="images/cv/CV_CR.jpg" alt="Collettivo Cerebro" onclick="mostraCV('cvMembro10')">
+                    <img src="images/cv/CV_CB.jpg" alt="Collettivo Cerebro" onclick="mostraCV('cvMembro11')">                                                   
                 </div>           
 
                 <div id="textCV">
@@ -332,7 +355,7 @@
                             
         </section>
 
-        <!--CONTACT -->
+        <!-- CONTACT -->
         <section id="contact">       
             <div class="contact_container">
                 <form action="action_page.php">
