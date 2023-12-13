@@ -31,13 +31,13 @@ export default function(){
 
   // TEXTURS
   const loader = new THREE.TextureLoader();
-  const textureP = loader.load ('images/bcg/Sfondo.jpg'); 
+  const textureP = loader.load ('./images/bcg/Sfondo.jpg'); 
   textureP.wrapS = THREE.RepeatWrapping;
   textureP.WrapT = THREE.RepeatWrapping;
 
-  const textureP2 = loader.load ('images/bcg/Sfondo2.jpg');
-  const textureP3 = loader.load ('images/bcg/SfondoS.jpg');
-  const textureSpace = loader.load ('images/equirectangulars/space.jpg');
+  const textureP2 = loader.load ('./images/bcg/Sfondo2.jpg');
+  const textureP3 = loader.load ('./images/bcg/SfondoS.jpg');
+  const textureSpace = loader.load ('./images/equirectangulars/space.jpg');
 
 // VIDEO  
 // VIDEO 1
