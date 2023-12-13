@@ -42,7 +42,7 @@ export default function(){
 // VIDEO  
 // VIDEO 1
 var video1 = document.createElement('video');
-video1.src = "/video/cinematic/00_Lupin.mp4";
+video1.src = "./video/cinematic/00_Lupin.mp4";
 video1.style.display = 'none'; 
 video1.loop = true; 
 document.body.appendChild(video1);  
@@ -57,7 +57,7 @@ vTexture1.format = THREE.RGBAFormat;
 
 // VIDEO 2
 var video2 = document.createElement('video');
-video2.src = "/video/cinematic/butterfly_spot.mp4";
+video2.src = "./video/cinematic/butterfly_spot.mp4";
 video2.style.display = 'none'; 
 video2.loop = true; 
 document.body.appendChild(video2);  
